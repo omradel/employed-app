@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@iconify/vue": "^5.0.0",
+    "@supabase/supabase-js": "^2.49.4",
     "@tailwindcss/vite": "^4.1.6",
     "@vueuse/core": "^13.1.0",
     "class-variance-authority": "^0.7.1",

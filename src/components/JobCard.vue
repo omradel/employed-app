@@ -1,7 +1,22 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import { Button } from '@/components/ui/button'
-defineProps<{companyLogo : string, jobTitle : string, companyName : string, location : string, timeAgo : string, skills : string[]}>()
+import formatTimeAgo from '@/utils/dateFormate'
+
+defineProps<{
+  id: number
+  title: string
+  company_name: string
+  company_logo: string
+  location: string
+  skills: string[]
+  created_at: string
+  description: string
+  experience_level: string
+  job_type: string
+  salary_range?: string
+  class?: string
+}>()
 </script>
 
 <template>
@@ -10,12 +25,12 @@ defineProps<{companyLogo : string, jobTitle : string, companyName : string, loca
       <div class="flex-1">
         <!-- Job Title and Actions -->
         <h2 class="text-lg font-semibold text-[#073cae] hover:text-purple-800">
-        {{ jobTitle }}
+        {{ title }}
         </h2>
 
         <!-- Company Name and Location -->
         <div class="flex items-center gap-2 text-gray-600 mb-3">
-          <span class="font-medium text-sm">{{ companyName }}</span>
+          <span class="font-medium text-sm">{{ company_name }}</span>
           <span class="text-gray-400">-</span>
           <span class="flex items-center gap-1 text-sm">
             <Icon icon="mdi:map-marker" class="w-4 h-4" />
@@ -35,7 +50,7 @@ defineProps<{companyLogo : string, jobTitle : string, companyName : string, loca
 
         <!-- Time Posted -->
         <div class="text-sm text-green-600">
-          {{ timeAgo }}
+          {{ formatTimeAgo(created_at) }}
         </div>
         </div>
 
@@ -60,7 +75,7 @@ defineProps<{companyLogo : string, jobTitle : string, companyName : string, loca
       </div>
 
       <!-- Company Logo -->
-      <img :src="companyLogo" :alt="companyName" class="w-16 h-16 object-contain rounded-0" />
+      <img :src="company_logo" class="w-16 h-16 object-contain rounded-0" />
     </div>
   </article>
 </template> 
