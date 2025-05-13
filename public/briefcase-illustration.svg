@@ -1,0 +1,14 @@
+&lt;svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;!-- Briefcase Body --&gt;
+  &lt;rect x="40" y="70" width="120" height="90" rx="8" fill="#0066FF" /&gt;
+  
+  &lt;!-- Briefcase Top --&gt;
+  &lt;path d="M70 70V55C70 51.6863 72.6863 49 76 49H124C127.314 49 130 51.6863 130 55V70" stroke="#0066FF" stroke-width="6"/&gt;
+  
+  &lt;!-- Briefcase Handle --&gt;
+  &lt;rect x="85" y="60" width="30" height="10" rx="4" fill="#0066FF" /&gt;
+  
+  &lt;!-- Checkmark Circle --&gt;
+  &lt;circle cx="150" cy="140" r="20" fill="#4CAF50" /&gt;
+  &lt;path d="M142 140L148 146L158 134" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/&gt;
+&lt;/svg&gt; 
