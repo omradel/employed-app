@@ -21,7 +21,6 @@ defineProps<{
 
 <template>
   <article class="bg-white p-4">
-    <h1>Test vercel</h1>
     <div class="flex items-start gap-4">
       <div class="flex-1">
         <!-- Job Title and Actions -->
