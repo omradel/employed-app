@@ -1,4 +1,4 @@
-# Wuzzuf Clone
+# Employment-app
 
 A Vue.js-based job board application focusing on frontend performance optimization and testing best practices. This project is a clone of Wuzzuf's interface, built to enhance frontend development skills and demonstrate modern web development practices.
 
