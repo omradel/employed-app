@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, type Component } from "vue";
 import JobCard from "@/components/JobCard.vue";
 import MultiApplyCard from "@/components/MultiApplyCard.vue";
 import Recommended from "@/components/recomJops.vue";
 import Outside from "@/components/outsideJops.vue";
 
-const currentTab = ref("Recommended");
+const currentTab = ref<string>("Recommended");
 
-const tabs = { Recommended, Outside };
+const tabs: Record<string, Component> = { Recommended, Outside };
 </script>
 
 <template>
