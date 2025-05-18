@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import JobCard from "./JobCard.vue";
 import { useJops } from "@/compasables/jobsLogic";
 import { Skeleton } from "@/components/ui/skeleton";
