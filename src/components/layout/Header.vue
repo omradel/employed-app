@@ -6,7 +6,7 @@ const search = ref('')
 </script> 
 
 <template>
-  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white">
+  <header class="border-b border-gray-200 bg-white">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex items-center justify-between h-14">
         <div class="flex items-center space-x-8">

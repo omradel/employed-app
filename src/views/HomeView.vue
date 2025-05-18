@@ -20,7 +20,7 @@ const { jobs, loading, error } = useJops()
           <span class="text-sm font-medium py-3 px-3 cursor-pointer">Outside Egypt</span>
         </div>
         
-        <JobCard v-for="(job, index) in jobs" :key="index" v-bind="job"   />
+        <JobCard v-for="(job, index) in jobs" :key="index" v-bind="job" :class="index !== jobs.length - 1 ? 'border-b' : ''"  />
       </div>
       
       <div class="xl:col-span-4 lg:col-span-4 md:col-span-12 col-span-12 space-y-4">

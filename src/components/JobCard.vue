@@ -15,7 +15,6 @@ defineProps<{
   experience_level: string
   job_type: string
   salary_range?: string
-  class?: string
 }>()
 </script>
 
