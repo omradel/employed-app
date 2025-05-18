@@ -23,11 +23,15 @@ export interface Job {
 
 // Jobs API
 export const jobsApi = {
-  async getAllJobs() {
-    const { data, error } = await supabase
-      .from('jobs')
-      .select('*')
-      .order('created_at', { ascending: false })
+  async getAllJobs(is_international?: boolean) {
+
+    let query = supabase.from('jobs').select('*')
+
+    if (is_international) {
+      query = query.eq('is_inernational', is_international)
+    }
+
+    const { data, error } = await query.order('created_at', { ascending: false })
     
     if (error) throw error
     return data as Job[]
