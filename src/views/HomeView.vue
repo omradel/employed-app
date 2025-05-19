@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, type Component } from "vue";
-import JobCard from "@/components/JobCard.vue";
 import MultiApplyCard from "@/components/MultiApplyCard.vue";
 import Recommended from "@/components/recomJops.vue";
 import Outside from "@/components/outsideJops.vue";

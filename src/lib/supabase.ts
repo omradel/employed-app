@@ -18,23 +18,48 @@ export interface Job {
   experience_level: string
   job_type: string
   salary_range?: string
-  
+}
+
+// Pagination response type
+export interface PaginatedResponse<T> {
+  data: T[]
+  total: number
+  page: number
+  limit: number
+  totalPages: number
 }
 
 // Jobs API
 export const jobsApi = {
-  async getAllJobs(is_international?: boolean) {
+  async getAllJobs(options?: { 
+    is_international?: boolean
+    page?: number
+    limit?: number 
+  }) {
+    const page = options?.page || 1
+    const limit = options?.limit || 2
+    const start = (page - 1) * limit
+    const end = start + limit - 1
 
-    let query = supabase.from('jobs').select('*')
+    let query = supabase.from('jobs').select('*', { count: 'exact' })
 
-    if (is_international) {
-      query = query.eq('is_inernational', is_international)
+    if (options?.is_international) {
+      query = query.eq('is_inernational', options.is_international)
     }
 
-    const { data, error } = await query.order('created_at', { ascending: false })
+    const { data, error, count } = await query
+      .order('created_at', { ascending: false })
+      .range(start, end)
     
     if (error) throw error
-    return data as Job[]
+
+    return {
+      data: data as Job[],
+      total: count || 0,
+      page,
+      limit,
+      totalPages: count ? Math.ceil(count / limit) : 0
+    } as PaginatedResponse<Job>
   },
 
   async getJobById(id: number) {
