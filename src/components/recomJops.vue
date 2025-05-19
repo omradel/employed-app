@@ -2,9 +2,7 @@
 import JobCard from "./JobCard.vue";
 import { useJops } from "@/compasables/jobsLogic";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Button } from "@/components/ui/button";
-import { computed } from 'vue';
-
+import Pagination from "@/components/ui/Pagination.vue";
 
 const { 
   jobs, 
@@ -18,11 +16,6 @@ const {
   canNextPage,
   canPreviousPage,
 } = useJops();
-
-// Make pageNumbers reactive using computed
-const pageNumbers = computed(() => 
-  Array.from({ length: totalPages.value }, (_, i) => i + 1)
-);
 
 </script>
 
@@ -56,38 +49,17 @@ const pageNumbers = computed(() =>
         :class="{ 'border-b': index !== jobs.length - 1 }"
       />
 
+      <!-- Pagination -->
+      <Pagination
+        :currentPage="currentPage"
+        :totalPages="totalPages"
+        :nextPage="nextPage"
+        :previousPage="previousPage"
+        :goToPage="goToPage"
+        :canNextPage="canNextPage"
+        :canPreviousPage="canPreviousPage"
+      />
 
-      <!-- Pagination Controls -->
-      <div class="flex justify-center items-center gap-2 mt-6 pb-4">
-        <Button
-          variant="outline"
-          size="sm"
-          :disabled="!canPreviousPage"
-          @click="previousPage"
-        >
-          Previous
-        </Button>
-
-        <Button
-          v-for="page in pageNumbers"
-          :key="page"
-          variant="outline"
-          size="sm"
-          :class="{ 'bg-primary text-white': currentPage === page }"
-          @click="goToPage(page)"
-        >
-          {{ page }}
-        </Button>
-
-        <Button
-          variant="outline"
-          size="sm"
-          :disabled="!canNextPage"
-          @click="nextPage"
-        >
-          Next
-        </Button>
-      </div>
     </div>
   </div>
 </template>
