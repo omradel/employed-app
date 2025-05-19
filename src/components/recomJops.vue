@@ -25,7 +25,7 @@ const {
     <div
       v-if="loading"
       class="flex justify-between p-4 border-b"
-      v-for="sketon in 5"
+      v-for="sketon in 6"
       :key="sketon"
     >
       <div class="flex flex-col gap-2 w-full">

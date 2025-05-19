@@ -6,7 +6,7 @@ export const useJops = (is_international?: boolean) => {
     const loading = ref<boolean>(false)
     const error = ref<string | null>(null)
     const currentPage = ref<number>(1)
-    const limit = ref<number>(2)
+    const limit = ref<number>(6)
     const total = ref<number>(0)
     const totalPages = ref<number>(0)
 

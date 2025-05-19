@@ -42,7 +42,7 @@ const pageNumbers = computed(() =>
           :key="page"
           variant="outline"
           size="sm"
-          :class="{ 'bg-primary text-white': currentPage === page }"
+          :class="{ 'bg-blue-600 text-white': currentPage === page }"
           @click="goToPage(page)"
         >
           {{ page }}
