@@ -7,6 +7,8 @@ import vueDevTools from "vite-plugin-vue-devtools";
 import tailwindcss from "@tailwindcss/vite";
 import Pages from "vite-plugin-pages";
 import Layouts from "vite-plugin-vue-layouts";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,6 +17,37 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
     tailwindcss(),
+    Components({
+      dirs: ["src/components", "src/modules/**/components"],
+    }),
+    AutoImport({
+      include: [
+        /\.[tj]sx?$/,
+        /\.vue$/,
+        /\.vue\?vue/,
+        /\.vue\.[tj]sx?\?vue/,
+        /\.md$/,
+      ],
+
+      imports: [
+        "vue",
+        "vue-router",
+        {
+          from: "vue-router",
+          imports: ["RouteLocationRaw"],
+          type: true,
+        },
+        {
+          from: "pinia",
+          imports: ["defineStore", "storeToRefs"],
+        },
+      ],
+
+      dirs: ["./src/stores", "./src/composables"],
+
+      dts: "src/auto-imports.d.ts",
+    }),
+
     Layouts({
       layoutsDirs: "src/layouts",
       defaultLayout: "default",
