@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import Header from '@/components/layout/Header.vue'
+import Header from "@/components/layout/Header.vue";
 </script>
 
 <template>
   <div>
     <Header />
-    <router-view />
+    <main class="bg-secondary">
+      <router-view />
+    </main>
   </div>
 </template>
-
-
-

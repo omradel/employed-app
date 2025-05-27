@@ -3,11 +3,11 @@ import JobCard from "./JobCard.vue";
 import { useJops } from "@/compasables/jobsLogic";
 import { Skeleton } from "@/components/ui/skeleton";
 import Pagination from "@/components/ui/Pagination.vue";
-import { computed } from 'vue';
+import { computed } from "vue";
 
-const { 
-  jobs, 
-  loading, 
+const {
+  jobs,
+  loading,
   error,
   currentPage,
   totalPages,
@@ -17,11 +17,6 @@ const {
   canNextPage,
   canPreviousPage,
 } = useJops(true);
-
-// Make pageNumbers reactive using computed
-const pageNumbers = computed(() => 
-  Array.from({ length: totalPages.value }, (_, i) => i + 1)
-);
 </script>
 
 <template>
