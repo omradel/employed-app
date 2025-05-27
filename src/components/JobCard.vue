@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
-import { Button } from '@/components/ui/button'
-import formatTimeAgo from '@/utils/dateFormate'
+import { Icon } from "@iconify/vue";
+import { Button } from "@/components/ui/button";
+import formatTimeAgo from "@/utils/dateFormate";
 
 defineProps<{
-  id: number
-  title: string
-  company_name: string
-  company_logo: string
-  location: string
-  skills: string[]
-  created_at: string
-  description: string
-  experience_level: string
-  job_type: string
-  salary_range?: string
-}>()
+  id: number;
+  title: string;
+  company_name: string;
+  company_logo: string;
+  location: string;
+  skills: string[];
+  created_at: string;
+  description: string;
+  experience_level: string;
+  job_type: string;
+  salary_range?: string;
+}>();
 </script>
 
 <template>
@@ -24,7 +24,7 @@ defineProps<{
       <div class="flex-1">
         <!-- Job Title and Actions -->
         <h2 class="text-lg font-semibold text-[#073cae] hover:text-purple-800">
-        {{ title }}
+          {{ title }}
         </h2>
 
         <!-- Company Name and Location -->
@@ -39,42 +39,40 @@ defineProps<{
 
         <!-- Skills -->
         <div class="flex flex-wrap gap-2 mb-3">
-          <span 
-            v-for="skill in skills" 
+          <span
+            v-for="skill in skills"
             :key="skill"
             class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs"
           >
             {{ skill }}
           </span>
 
-        <!-- Time Posted -->
-        <div class="text-sm text-green-600">
-          {{ formatTimeAgo(created_at) }}
+          <!-- Time Posted -->
+          <div class="text-sm text-green-600">
+            {{ formatTimeAgo(created_at) }}
+          </div>
         </div>
-        </div>
-
-
 
         <div class="flex gap-2 mt-5">
-            <Button variant="ghost" size="sm">
-                <Icon icon="mdi:bookmark-outline" class="w-5 h-5" />
-                <span>Save</span>
-            </Button>
+          <Button variant="ghost" size="sm">
+            <Icon icon="mdi:bookmark-outline" class="w-5 h-5" />
+            <span>Save</span>
+          </Button>
 
-            <Button variant="ghost" size="sm">
-                <Icon icon="mdi:share-variant-outline" class="w-5 h-5" />
-                <span>Share</span>
-            </Button>
+          <Button variant="ghost" size="sm">
+            <Icon icon="mdi:share-variant-outline" class="w-5 h-5" />
+            <span>Share</span>
+          </Button>
 
-            <Button variant="ghost" size="sm">
-                <Icon icon="mdi:eye-off-outline" class="w-5 h-5" />
-                <span>Hide</span>
-            </Button>
-          </div>
+          <Button variant="ghost" size="sm">
+            <Icon icon="mdi:eye-off-outline" class="w-5 h-5" />
+            <span>Hide</span>
+          </Button>
+        </div>
       </div>
 
       <!-- Company Logo -->
       <img :src="company_logo" class="w-16 h-16 object-contain rounded-0" />
     </div>
   </article>
-</template> 
+</template>

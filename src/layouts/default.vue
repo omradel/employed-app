@@ -6,7 +6,7 @@ import Header from "@/components/layout/Header.vue";
   <div>
     <Header />
     <main class="bg-secondary">
-      <router-view />
+      <router-view v-slot="{ Component }" />
     </main>
   </div>
 </template>
