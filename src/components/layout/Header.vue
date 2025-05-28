@@ -54,6 +54,10 @@ const search = ref("");
             alt="Profile"
             class="h-6 w-6 rounded-full"
           />
+
+          <LangSwitcher />
+
+          {{ $t("auth") }}
         </div>
       </div>
     </div>

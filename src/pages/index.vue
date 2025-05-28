@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Recommended from "@/components/recomJops.vue";
-import Outside from "@/components/outsideJops.vue";
+import Recommended from "@/components/app/recomJops.vue";
+import Outside from "@/components/app/outsideJops.vue";
 
 const currentTab = ref<string>("Recommended");
 
