@@ -8,6 +8,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppLoader: typeof import('./src/components/global/AppLoader.vue')['default']
     Button: typeof import('./src/components/ui/button/Button.vue')['default']
     Header: typeof import('./src/components/layout/Header.vue')['default']
     Input: typeof import('./src/components/ui/input/Input.vue')['default']
@@ -15,6 +16,7 @@ declare module 'vue' {
     LangSwitcher: typeof import('./src/components/global/LangSwitcher.vue')['default']
     MultiApplyCard: typeof import('./src/components/app/MultiApplyCard.vue')['default']
     OutsideJops: typeof import('./src/components/app/outsideJops.vue')['default']
+    PageLoading: typeof import('./src/components/global/PageLoading.vue')['default']
     Pagination: typeof import('./src/components/ui/Pagination.vue')['default']
     RecomJops: typeof import('./src/components/app/recomJops.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

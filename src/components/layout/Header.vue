@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { Input } from "@/components/ui/input";
-import { ref } from "vue";
-
 const search = ref("");
 </script>
 
@@ -17,13 +14,15 @@ const search = ref("");
           <nav class="hidden md:flex space-x-8">
             <ul class="list-none flex gap-x-3 items-center">
               <li>
-                <a href="/explore" class="text-blue-600 font-medium">EXPLORE</a>
+                <router-link to="/" class="text-blue-600 font-medium"
+                  >EXPLORE</router-link
+                >
               </li>
               <li>
-                <a
-                  href="/saved"
+                <router-link
+                  to="/saved"
                   class="text-gray-600 hover:text-gray-900 font-medium"
-                  >SAVED</a
+                  >SAVED</router-link
                 >
               </li>
               <li>
@@ -54,10 +53,6 @@ const search = ref("");
             alt="Profile"
             class="h-6 w-6 rounded-full"
           />
-
-          <LangSwitcher />
-
-          {{ $t("auth") }}
         </div>
       </div>
     </div>

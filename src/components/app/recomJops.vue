@@ -1,12 +1,7 @@
 <script setup lang="ts">
-import JobCard from "./JobCard.vue";
-import { useJops } from "@/compasables/jobsLogic";
-import { Skeleton } from "@/components/ui/skeleton";
-import Pagination from "@/components/ui/Pagination.vue";
-
-const { 
-  jobs, 
-  loading, 
+const {
+  jobs,
+  loading,
   error,
   currentPage,
   totalPages,
@@ -16,7 +11,6 @@ const {
   canNextPage,
   canPreviousPage,
 } = useJops();
-
 </script>
 
 <template>
@@ -59,7 +53,6 @@ const {
         :canNextPage="canNextPage"
         :canPreviousPage="canPreviousPage"
       />
-
     </div>
   </div>
 </template>

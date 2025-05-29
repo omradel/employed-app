@@ -4,7 +4,7 @@ import ar from "./locales/ar";
 import en from "./locales/en";
 
 const i18n = createI18n({
-  legacy: true,
+  legacy: false,
   locale: localStorage.getItem("preferred-language") || "ar",
   fallbackLocale: localStorage.getItem("preferred-language") || "ar",
   messages: {
