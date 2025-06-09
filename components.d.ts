@@ -22,6 +22,5 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Skeleton: typeof import('./src/components/ui/skeleton/Skeleton.vue')['default']
-    ThemeSwitcher: typeof import('./src/components/global/ThemeSwitcher.vue')['default']
   }
 }

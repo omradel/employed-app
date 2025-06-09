@@ -43,7 +43,11 @@ export default defineConfig({
         },
       ],
 
-      dirs: ["./src/stores", "./src/compasables"],
+      dirs: [
+        "./src/stores",
+        "./src/compasables/app",
+        "./src/compasables/reusable",
+      ],
 
       dts: "src/auto-imports.d.ts",
     }),
