@@ -1,4 +1,3 @@
-// import { useAuthStore } from "@/stores/auth";
 import axios, { type AxiosInstance } from "axios";
 
 const axiosInstance: AxiosInstance = axios.create({
@@ -17,3 +16,5 @@ axiosInstance.interceptors.request.use((config) => {
 
   return config;
 });
+
+export default axiosInstance;

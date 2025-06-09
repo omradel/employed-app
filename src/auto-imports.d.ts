@@ -61,6 +61,7 @@ declare global {
   const useCounterStore: typeof import("./stores/counter")["useCounterStore"]
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useFetch: typeof import('./compasables/reusable/useFetch')['useFetch']
   const useId: typeof import('vue')['useId']
   const useJops: typeof import('./compasables/app/jobsLogic')['useJops']
   const useLink: typeof import('vue-router')['useLink']
@@ -83,4 +84,7 @@ declare global {
   // @ts-ignore
   export type { RouteLocationRaw } from 'vue-router'
   import('vue-router')
+  // @ts-ignore
+  export type { useFetchResponse } from './compasables/reusable/useFetch'
+  import('./compasables/reusable/useFetch')
 }
